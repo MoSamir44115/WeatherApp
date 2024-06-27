@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title>WeatherApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <link href="imgs/icons8-clouds-96.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/cssstyle.css" />
+</head>
+
+<body>
+    <section id="navBar">
+        <nav class="navbar navbar-expand-lg py-5">
+            <div class="container">
+                <div class="logo text-white d-flex">
+                    <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="weatherapp-logo" /></a>
+                    <div class="logoContent my-auto">
+                        <h1>Weather</h1>
+                        <p class="content">tag line goes here</p>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="my-2 my-lg-0 nav-link active border border-2 rounded-5 px-4" aria-current="page"
+                                href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="my-2 my-lg-0 bord nav-link text-white" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="my-2 my-lg-0  bord nav-link text-white" href="#">Live Cameras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="my-2 my-lg-0 bord nav-link text-white" href="#">Photos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="my-2 my-lg-0 bord nav-link text-white" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section>
+        <div class="bgcolor ">
+            <div class="bgImage overflow-hidden">
+                <div class="container">
+                    <div class="input-group mb-3 mt-5 position-relative">
+                        <input value="" id="searchInput" type="text" class="ps-3 form-control" placeholder="Find Your Location ..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2" />
+                        <a class="my-1 align-content-center text-center position-absolute find border border-primary"
+                            href="#">Find</a>
+                    </div>
+                    <div class="weathercontent mb-5 ">
+                        <div id="theWholeApp" class="row mx-auto">
+                            <div id="current-Day"  class="col-12 col-lg-4 card firstcard px-0  ">
+                                <div class="cardheader text-white-50 p-2">
+                                    <p>
+                                        <span id="current-Day-Day" class="float-start"></span><span id="current-Day-Month" class="float-end"></span><span id="current-Day-Num"class="float-end me-1"></span>
+                                    </p>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 id="current-Day-Location" class="card-title"></h4>
+                                    <p id="current-Day-Temp" class="temp card-text mb-0"><sup>o</sup>C</p>
+                                    <div class="w-25 sunimage">
+                                        <img id="current-Day-Forecast-Img" class="w-100" src="imgs/113.png" alt="sun-icon" />
+                                    </div>
+                                    <h6 id="current-Day-Forecast-Text" class="sunny mb-3">Sunny</h6>
+                                    <div class="d-flex">
+                                        <p class="me-4 card-text text-white-50">
+                                            <i class="me-1 fa fa-umbrella fa-solid"></i><span id="current-Day-Hum">20%</span>
+                                        </p>
+                                        <p class="me-4 card-text text-white-50">
+                                            <i class="me-1 fa-cloud fa-solid"></i><span id="current-Day-Wind-Speed">18km/h</span>
+                                        </p>
+                                        <p class="card-text text-white-50">
+                                            <i class="me-1 fa-compass fa-solid"></i> <span id="current-Day-Wind-Dir">East</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="nextDays"  class="col-12 col-lg-4  card secondcard">
+                                <div class="cardheader text-white-50 p-2">
+                                    <p class="next-Days-Day m-0 text-center">Wednesday</p>
+                                </div>
+                                <div class="card-body text-center pt-5">
+                                    <div class="imgwidth sunimage mx-auto">
+                                        <img class="next-Days-Forecast-Img w-100" src="imgs/113.png" alt="sun-icon" />
+                                    </div>
+                                    <h6 class="next-Days-Hi-Temp text-white mt-4">41<sup>o</sup>C</h6>
+                                    <p class=" next-Days-Low-Temp card-text text-white-50">24.5<sup>o</sup>C</p>
+                                    <h5 class="next-Days-Forecast-Text  sunny">Sunny</h5>
+                                </div>
+                            </div>
+                            <div id="dayAfterTomorrow" class="col-12 col-lg-4  card thirdcard">
+                                <div class="cardheader text-white-50 p-2">
+                                    <p class="next-Days-Day m-0 text-center">Thursday</p>
+                                </div>
+                                <div class="card-body text-center pt-5">
+                                    <div class="imgwidth sunimage mx-auto">
+                                        <img class="next-Days-Forecast-Img w-100" src="imgs/113.png" alt="sun-icon" />
+                                    </div>
+                                    <h6 class="next-Days-Hi-Temp text-white mt-4">41.43<sup>o</sup>C</h6>
+                                    <p class="next-Days-Low-Temp card-text text-white-50">24.5<sup>o</sup>C</p>
+                                    <h5 class="next-Days-Forecast-Text sunny">Sunny</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footerbgcolor">
+        <div class="container-lg overflow-hidden ">
+            <div class="subscribe mb-3 mt-5 d-lg-flex align-items-baseline">
+                <div class=" input-group  position-relative">
+                    <input type="text" class="ps-3 form-control" placeholder="Enter Your Email To Subscribe ..."
+                        aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <a class="my-1 align-content-center text-center position-absolute find border border-primary"
+                        href="#">Subscribe</a>
+                </div>
+                <div class="text-white icons mt-4 mt-lg-0">
+                    <ul class="ms-lg-5 d-flex list-unstyled fs-4 ">
+                        <li class=" d-flex align-items-center justify-content-center "><i
+                                class="fa-brands fa-facebook"></i></li>
+                        <li class="mx-2 d-flex align-items-center justify-content-center"><i
+                                class="fa-brands fa-twitter"></i></li>
+                        <li class=" d-flex align-items-center justify-content-center"><i
+                                class=" fa-brands fa-google-plus-g"></i></li>
+                        <li class="mx-2 d-flex align-items-center justify-content-center"><i
+                                class="  fa-brands fa-pinterest"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-white-50 mb-5 ">
+                Copyright 2014 Company name . Replicated Designed by Mohamed Samir. All rights
+                reserved
+            </p>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/java.js"></script>
+</body>
+
+</html>
